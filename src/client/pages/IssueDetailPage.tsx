@@ -469,7 +469,7 @@ type IssueSeverity = 'critical' | 'high' | 'medium' | 'low';
 
 export const IssueDetailPage: React.FC = () => {
   const navigate = useNavigate();
-  const { id } = useParams<{ id: string }>();
+  const { id: _id } = useParams<{ id: string }>();
 
   // In real app, fetch issue by id
   const issue = mockIssue;
@@ -593,7 +593,7 @@ export const IssueDetailPage: React.FC = () => {
             <LineNumberBox>
               <FilePathLabel>Line Number</FilePathLabel>
               <LineNumberGroup>
-                <Badge variant="ghost" style={{ fontFamily: 'monospace' }}>
+                <Badge variant="default">
                   Line {issue.line}
                 </Badge>
                 <Button variant="ghost" size="sm">
@@ -709,35 +709,7 @@ export const IssueDetailPage: React.FC = () => {
           {relatedIssues.map((relatedIssue, index) => (
             <RelatedIssueItem key={index} onClick={() => navigate(`/issue/${index + 2}`)}>
               <RelatedIssueHeader>
-                <Badge
-                  variant={
-                    relatedIssue.severity === 'high'
-                      ? 'default'
-                      : relatedIssue.severity === 'medium'
-                      ? 'default'
-                      : 'default'
-                  }
-                  style={{
-                    background:
-                      relatedIssue.severity === 'high'
-                        ? 'rgba(249, 115, 22, 0.1)'
-                        : relatedIssue.severity === 'medium'
-                        ? 'rgba(234, 179, 8, 0.1)'
-                        : 'rgba(59, 130, 246, 0.1)',
-                    color:
-                      relatedIssue.severity === 'high'
-                        ? '#f97316'
-                        : relatedIssue.severity === 'medium'
-                        ? '#eab308'
-                        : '#3b82f6',
-                    borderColor:
-                      relatedIssue.severity === 'high'
-                        ? 'rgba(249, 115, 22, 0.2)'
-                        : relatedIssue.severity === 'medium'
-                        ? 'rgba(234, 179, 8, 0.2)'
-                        : 'rgba(59, 130, 246, 0.2)',
-                  }}
-                >
+                <Badge variant={relatedIssue.severity as IssueSeverity}>
                   {relatedIssue.severity}
                 </Badge>
                 <ChevronRight size={14} />

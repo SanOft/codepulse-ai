@@ -11,7 +11,6 @@ import {
   TrendingDown,
   ChartPie,
 } from 'lucide-react'
-import { theme } from '../../styles/theme'
 
 const Grid = styled.div`
   display: grid;

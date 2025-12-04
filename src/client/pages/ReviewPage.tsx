@@ -344,7 +344,7 @@ export const ReviewPage: React.FC = () => {
   const [diff, setDiff] = useState('')
   const [language, setLanguage] = useState('')
   const [context, setContext] = useState('')
-  const { review, loading, error, clear, result } = useReviewContext()
+  const { review, loading, error, clear } = useReviewContext()
 
   const diffSize = useMemo(() => {
     const sizeInBytes = new Blob([diff]).size

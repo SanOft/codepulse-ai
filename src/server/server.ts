@@ -1,13 +1,12 @@
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import axios from 'axios';
 import { createServer } from 'http';
 import { ClaudeService } from './services/claude.service.js';
 import { GitHubService } from './services/github.service.js';
 import { CodeFixService } from './services/code-fix.service.js';
 import { webSocketService } from './services/websocket.service.js';
-import { ReviewRequest, ApiResponse, ReviewResult, CostMetrics, PullRequest, Repository, CodeFixRequest } from './types/index.js';
+import { ReviewRequest, ApiResponse, ReviewResult, CostMetrics, CodeFixRequest } from './types/index.js';
 import authRoutes from './routes/auth.routes.js';
 import webhookRoutes from './routes/webhooks.routes.js';
 
@@ -60,7 +59,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 // Health check endpoint
-app.get('/api/health', (req: Request, res: Response) => {
+app.get('/api/health', (_req: Request, res: Response) => {
   const cacheStats = claudeService.getCacheStats();
   const response: ApiResponse<any> = {
     success: true,
@@ -162,7 +161,7 @@ app.post('/api/review', async (req: Request, res: Response) => {
 });
 
 // Metrics endpoint
-app.get('/api/metrics', (req: Request, res: Response) => {
+app.get('/api/metrics', (_req: Request, res: Response) => {
   const costMetrics: CostMetrics = {
     reviewCount: metrics.totalReviews,
     totalCost: Math.round(metrics.totalCost * 100000) / 100000,
@@ -372,7 +371,7 @@ app.post('/api/github/fix-code', async (req: Request, res: Response) => {
 });
 
 // Error handling middleware
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   console.error('Unhandled error:', err);
   const response: ApiResponse<never> = {
     success: false,
@@ -383,7 +382,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 });
 
 // 404 handler
-app.use((req: Request, res: Response) => {
+app.use((_req: Request, res: Response) => {
   const response: ApiResponse<never> = {
     success: false,
     error: 'Not found',

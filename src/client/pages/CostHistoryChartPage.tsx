@@ -2,10 +2,8 @@
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useNavigate, Link } from 'react-router-dom'
-import { Card, Button, Badge, MetricCard } from '../components/ui'
+import { Link } from 'react-router-dom'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
-import { theme } from '../styles/theme'
 import { DateRangeFilter } from '../components/cost-history-chart/DateRangeFilter'
 import { CostHistoryChart } from '../components/cost-history-chart/CostHistoryChart'
 import { CostComparisonMetrics } from '../components/cost-history-chart/CostComparisonMetrics'
@@ -86,7 +84,6 @@ const FooterLink = styled(Link)`
 `
 
 export const CostHistoryChartPage: React.FC = () => {
-  const navigate = useNavigate()
   const [dateRange, setDateRange] = useState('30')
 
   return (

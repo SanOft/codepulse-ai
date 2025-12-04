@@ -322,8 +322,8 @@ export const PullRequestsPage: React.FC = () => {
                   <Button
                     variant='ghost'
                     size='sm'
-                    onClick={(e) => {
-                      e.stopPropagation()
+                    onClick={(e?: React.MouseEvent<HTMLButtonElement>) => {
+                      e?.stopPropagation()
                       window.open(pr.url, '_blank')
                     }}
                   >

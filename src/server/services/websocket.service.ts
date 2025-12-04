@@ -16,7 +16,7 @@ export class WebSocketService {
   initialize(server: Server) {
     this.wss = new WebSocketServer({ server, path: '/ws' })
 
-    this.wss.on('connection', (ws: WebSocket, req) => {
+    this.wss.on('connection', (ws: WebSocket, _req) => {
       const client: ClientConnection = {
         ws,
         connectedAt: Date.now(),

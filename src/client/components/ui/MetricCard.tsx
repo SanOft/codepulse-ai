@@ -15,7 +15,7 @@ interface MetricCardProps {
 const Container = styled.div<{ $variant?: MetricCardProps['variant'] }>`
   /* metric-card styles from tailwind-build.css */
   border-width: 1px;
-  border-color: ${({ $variant, theme }) => {
+  border-color: ${({ $variant }) => {
     if ($variant === 'success') return `hsla(142, 76%, 36%, 0.2)`;
     if ($variant === 'warning') return `hsla(43, 96%, 56%, 0.2)`;
     return `hsla(217, 33%, 17%, 0.5)`;
@@ -118,7 +118,7 @@ const TrendBadge = styled.span<{ $trend: MetricCardProps['trend'] }>`
         return theme.colors.border;
     }
   }};
-  background-color: ${({ $trend, theme }) => {
+  background-color: ${({ $trend }) => {
     switch ($trend) {
       case 'up':
         return `hsla(142, 76%, 36%, 0.1)`;

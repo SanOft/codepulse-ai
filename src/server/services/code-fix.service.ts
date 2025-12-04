@@ -2,15 +2,13 @@
 
 import { GitHubService } from './github.service.js'
 import { ClaudeService } from './claude.service.js'
-import { CodeFix, CodeFixRequest, DependencyCheck } from '../types/index.js'
+import { CodeFix, DependencyCheck } from '../types/index.js'
 
 export class CodeFixService {
   private githubService: GitHubService
-  private claudeService: ClaudeService
 
-  constructor(githubService: GitHubService, claudeService: ClaudeService) {
+  constructor(githubService: GitHubService, _claudeService: ClaudeService) {
     this.githubService = githubService
-    this.claudeService = claudeService
   }
 
   async checkDependencies(
@@ -23,7 +21,7 @@ export class CodeFixService {
     // Extract function names, class names, imports, exports from code
     const functionNames = this.extractFunctionNames(codeToCheck)
     const classNames = this.extractClassNames(codeToCheck)
-    const imports = this.extractImports(codeToCheck)
+    this.extractImports(codeToCheck)
     const exports = this.extractExports(codeToCheck)
 
     const dependencies: string[] = []
