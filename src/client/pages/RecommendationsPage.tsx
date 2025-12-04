@@ -190,13 +190,6 @@ const CardSubtitle = styled.p`
   margin: 0;
 `;
 
-const CardBody = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing.md};
-`;
-
 const CardDescription = styled.p`
   font-size: ${({ theme }) => theme.fontSize.sm};
   color: ${({ theme }) => theme.colors.textMuted};

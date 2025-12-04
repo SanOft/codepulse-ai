@@ -337,7 +337,7 @@ export const IntegrationPage: React.FC = () => {
   const [accessToken, setAccessToken] = useState('')
   const [showRepoSelector, setShowRepoSelector] = useState(false)
   const [selectedRepositories, setSelectedRepositories] = useState<any[]>([])
-  const [error, setError] = useState<string | null>(null)
+  const [_error, setError] = useState<string | null>(null)
 
   // Handle OAuth callback
   useEffect(() => {
@@ -490,43 +490,6 @@ export const IntegrationPage: React.FC = () => {
         setIsLoading(false)
       }
     }, 300000)
-  }
-
-  const handleConnect = async () => {
-    // This is for manual token-based connection (optional)
-    if (!accessToken) {
-      setError('Please enter an access token or use OAuth connection')
-      return
-    }
-
-    setIsLoading(true)
-    setError(null)
-
-    try {
-      // Test the token by fetching user info
-      const apiUrl = provider === 'github' 
-        ? 'https://api.github.com/user'
-        : provider === 'gitlab'
-        ? `${process.env.GITLAB_URL || 'https://gitlab.com'}/api/v4/user`
-        : 'https://api.bitbucket.org/2.0/user'
-
-      const response = await fetch(apiUrl, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      })
-
-      if (!response.ok) {
-        throw new Error('Invalid access token')
-      }
-
-      setIsConnected(true)
-      setShowRepoSelector(true)
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Connection failed')
-    } finally {
-      setIsLoading(false)
-    }
   }
 
   const handleRepositoriesSave = (repositories: any[]) => {

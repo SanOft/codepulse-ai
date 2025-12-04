@@ -2,7 +2,7 @@
 
 import React from 'react'
 import styled from 'styled-components'
-import { Card, Badge } from '../ui'
+import { Card } from '../ui'
 import { Lightbulb, Target, TriangleAlert, ChevronRight } from 'lucide-react'
 import { theme } from '../../styles/theme'
 

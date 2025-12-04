@@ -4,7 +4,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import { Card, Button, Badge } from '../components/ui'
-import { useReview } from '../hooks/useReview'
 import {
   DollarSign,
   TriangleAlert,
@@ -15,7 +14,6 @@ import {
   TrendingDown,
   TrendingUp,
   Settings,
-  BarChart3,
   ChartColumn,
   Home,
   Plus,
@@ -426,12 +424,10 @@ const NavigationActions = styled.div`
 
 export const BudgetPage: React.FC = () => {
   const navigate = useNavigate()
-  const { metrics } = useReview()
 
   const dailyLimit = 0.5
   const monthlyLimit = 10.0
   const maxApiCalls = 50
-  const totalCost = metrics?.totalCost ?? 0
   const dailyCost = 0.42 // Simulated daily cost
   const monthlyCost = 8.5 // Simulated monthly cost
   const dailyPercentage = Math.min((dailyCost / dailyLimit) * 100, 100)
