@@ -3,6 +3,34 @@
   "version": "1.0.0",
   "description": "Production-grade AI code intelligence platform processing 100K+ reviews/month",
   "type": "module",
+  "author": "Sanjar Jurayev",
+  "email": "sanjar.juraev0409@gmail.com",
+  "website": "https://sanjarjuraev.dev",
+  "license": "MIT",
+  "homepage": "https://github.com/SanOft/codepulse-ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SanOft/codepulse-ai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SanOft/codepulse-ai/issues"
+  },
+  "keywords": [
+    "ai",
+    "code",
+    "review",
+    "code review",
+    "code intelligence",
+    "code analysis",
+    "code quality"
+  ],
+  "contributors": [
+    {
+      "name": "Sanjar Jurayev",
+      "email": "sanjar.juraev0409@gmail.com",
+      "url": "https://sanjarjuraev.dev"
+    }
+  ],
   "scripts": {
     "dev": "concurrently \"yarn dev:client\" \"yarn dev:server\"",
     "dev:client": "vite",
