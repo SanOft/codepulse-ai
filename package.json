@@ -41,7 +41,7 @@
     "setup:ngrok": "node scripts/setup-ngrok-auth.js",
     "ngrok": "node scripts/start-ngrok.js",
     "webhook:info": "node scripts/get-webhook-url.js",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "build:server": "tsc -p tsconfig.server.json",
     "preview": "vite preview",
     "type-check": "tsc --noEmit"
