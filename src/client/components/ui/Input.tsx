@@ -44,7 +44,7 @@ const StyledInput = styled.input<{ $hasError?: boolean }>`
     outline: none;
     border-color: ${({ theme, $hasError }) =>
       $hasError ? theme.colors.error : theme.colors.primary};
-    box-shadow: 0 0 0 3px ${({ theme, $hasError }) =>
+    box-shadow: 0 0 0 3px ${({ $hasError }) =>
       $hasError ? 'rgba(239, 68, 68, 0.1)' : 'rgba(99, 102, 241, 0.1)'};
   }
 

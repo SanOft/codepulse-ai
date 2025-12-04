@@ -2,7 +2,7 @@
 
 import Anthropic from '@anthropic-ai/sdk'
 import crypto from 'crypto'
-import { ReviewResult, CodeIssue, ClaudeResponse } from '../types/index.js'
+import { ReviewResult, ClaudeResponse } from '../types/index.js'
 
 interface CacheEntry {
   result: ReviewResult
