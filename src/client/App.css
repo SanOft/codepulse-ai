@@ -1,0 +1,505 @@
+/** @format */
+
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+    sans-serif;
+  background-color: #020617;
+  color: #e5e7eb;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1d2433 0, #020617 55%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.cp-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(
+      circle at top left,
+      rgba(99, 102, 241, 0.25),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(14, 165, 233, 0.18),
+      transparent 55%
+    ),
+    linear-gradient(to bottom, #020617, #020617);
+}
+
+.cp-app-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+.cp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.cp-logo-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background: conic-gradient(from 180deg, #6366f1, #8b5cf6, #06b6d4, #6366f1);
+  padding: 1px;
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.35),
+    0 20px 40px rgba(15, 23, 42, 0.85);
+}
+
+.cp-logo-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: radial-gradient(
+      circle at 0 0,
+      rgba(248, 250, 252, 0.25),
+      transparent 55%
+    ),
+    linear-gradient(145deg, #020617, #020617);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e5e7eb;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cp-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cp-title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #f9fafb;
+}
+
+.cp-subtitle {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.cp-badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: radial-gradient(
+      circle at 0 0,
+      rgba(148, 163, 184, 0.25),
+      transparent 60%
+    ),
+    rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cp-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.cp-card {
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  background: linear-gradient(
+      135deg,
+      rgba(148, 163, 184, 0.22),
+      transparent 40%
+    ),
+    radial-gradient(circle at top, rgba(15, 23, 42, 0.7), transparent 55%),
+    rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.95),
+    inset 0 0 0 1px rgba(15, 23, 42, 0.8);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.cp-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.cp-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.cp-card-description {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.cp-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.cp-metric {
+  padding: 10px 10px 9px;
+  border-radius: 12px;
+  background: radial-gradient(
+      circle at 0 0,
+      rgba(15, 23, 42, 0.9),
+      transparent 55%
+    ),
+    rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(51, 65, 85, 0.9);
+}
+
+.cp-metric-label {
+  font-size: 11px;
+  color: #9ca3af;
+  margin-bottom: 3px;
+}
+
+.cp-metric-value {
+  font-size: 16px;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.cp-metric-tag {
+  margin-top: 4px;
+  font-size: 10px;
+  color: #6b7280;
+}
+
+.cp-textarea {
+  width: 100%;
+  min-height: 210px;
+  resize: vertical;
+  border-radius: 12px;
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  background: radial-gradient(
+      circle at 0 0,
+      rgba(15, 23, 42, 1),
+      transparent 60%
+    ),
+    rgba(15, 23, 42, 0.98);
+  padding: 10px 11px;
+  color: #e5e7eb;
+  font-size: 13px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  outline: none;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.9);
+}
+
+.cp-textarea::placeholder {
+  color: #6b7280;
+}
+
+.cp-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.cp-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 999px;
+  border: none;
+  padding: 7px 13px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 120ms ease-out, box-shadow 120ms ease-out,
+    background 140ms ease-out, opacity 80ms ease-out;
+}
+
+.cp-button-primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #f9fafb;
+  box-shadow: 0 14px 30px rgba(88, 80, 236, 0.7),
+    0 0 0 1px rgba(129, 140, 248, 0.9);
+}
+
+.cp-button-primary:hover:not(:disabled) {
+  transform: translateY(-0.5px);
+  box-shadow: 0 18px 40px rgba(88, 80, 236, 0.85),
+    0 0 0 1px rgba(196, 181, 253, 1);
+}
+
+.cp-button-ghost {
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  border: 1px solid rgba(51, 65, 85, 0.9);
+}
+
+.cp-button-ghost:hover:not(:disabled) {
+  background: rgba(30, 64, 175, 0.35);
+  border-color: rgba(129, 140, 248, 0.85);
+}
+
+.cp-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  box-shadow: none;
+}
+
+.cp-button-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.9);
+  background: radial-gradient(
+      circle at 0 0,
+      rgba(248, 250, 252, 0.3),
+      transparent 55%
+    ),
+    rgba(15, 23, 42, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+.cp-helper-text {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.cp-helper-accent {
+  color: #a5b4fc;
+}
+
+.cp-summary {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #e5e7eb;
+}
+
+.cp-summary-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  font-size: 11px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cp-summary-pill {
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: rgba(8, 47, 73, 0.85);
+  color: #e0f2fe;
+  font-size: 10px;
+}
+
+.cp-issues-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cp-issue {
+  padding: 8px 9px;
+  border-radius: 10px;
+  border: 1px solid rgba(30, 64, 175, 0.7);
+  background: radial-gradient(
+      circle at 0 0,
+      rgba(15, 23, 42, 0.95),
+      transparent 55%
+    ),
+    rgba(15, 23, 42, 0.96);
+}
+
+.cp-issue-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.cp-issue-main {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cp-issue-severity {
+  padding: 2px 8px 3px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cp-issue-severity-critical {
+  background: rgba(248, 113, 113, 0.1);
+  color: #fecaca;
+  border: 1px solid rgba(239, 68, 68, 0.9);
+}
+
+.cp-issue-severity-high {
+  background: rgba(251, 146, 60, 0.08);
+  color: #fed7aa;
+  border: 1px solid rgba(249, 115, 22, 0.9);
+}
+
+.cp-issue-severity-medium {
+  background: rgba(250, 204, 21, 0.06);
+  color: #fef9c3;
+  border: 1px solid rgba(234, 179, 8, 0.85);
+}
+
+.cp-issue-severity-low {
+  background: rgba(56, 189, 248, 0.08);
+  color: #e0f2fe;
+  border: 1px solid rgba(14, 165, 233, 0.9);
+}
+
+.cp-issue-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.cp-issue-meta {
+  font-size: 10px;
+  color: #6b7280;
+}
+
+.cp-issue-description {
+  font-size: 12px;
+  color: #d1d5db;
+  margin-bottom: 4px;
+}
+
+.cp-issue-suggestion-label {
+  font-size: 10px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+
+.cp-issue-suggestion {
+  font-size: 12px;
+  color: #a5b4fc;
+}
+
+.cp-empty-state {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.cp-empty-pill {
+  align-self: flex-start;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px dashed rgba(55, 65, 81, 0.9);
+  background: rgba(15, 23, 42, 0.85);
+  font-size: 11px;
+}
+
+.cp-error {
+  margin-top: 8px;
+  padding: 8px 9px;
+  border-radius: 10px;
+  background: rgba(127, 29, 29, 0.3);
+  border: 1px solid rgba(239, 68, 68, 0.9);
+  color: #fee2e2;
+  font-size: 12px;
+}
+
+.cp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.cp-chip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 0 0, #a5b4fc, #4f46e5);
+  box-shadow: 0 0 0 1px rgba(55, 65, 81, 0.9);
+}
+
+.cp-chip-strong {
+  color: #e5e7eb;
+}
+
+@keyframes cp-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cp-spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: 2px solid rgba(30, 64, 175, 0.4);
+  border-top-color: #e5e7eb;
+  animation: cp-spin 700ms linear infinite;
+}
+
+@media (max-width: 900px) {
+  .cp-app-shell {
+    padding-inline: 14px;
+  }
+
+  .cp-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
