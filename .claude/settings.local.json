@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(vite:*)",
+      "Bash(curl:*)",
+      "Bash(powershell:*)",
+      "Bash(yarn type-check:*)",
+      "mcp__ide__getDiagnostics",
+      "WebFetch(domain:platform.claude.com)",
+      "WebSearch",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
