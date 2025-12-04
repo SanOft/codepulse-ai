@@ -174,23 +174,6 @@ const SortControls = styled.div`
   gap: ${({ theme }) => theme.spacing.sm};
 `
 
-const SortLabel = styled.label`
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-  clip-path: inset(50%);
-
-  &[for='sort-by-select'] {
-    /* Ensure label is properly associated */
-  }
-`
-
 const SortDirectionButton = styled.button`
   display: inline-flex;
   align-items: center;
@@ -489,15 +472,9 @@ export const ApiCallLogPage: React.FC = () => {
                   </TableDescription>
                 </div>
                 <SortControls>
-                  <SortLabel htmlFor='sort-by-select' id='sort-by-select-label'>
-                    Sort by field
-                  </SortLabel>
                   <SortBySelect
                     id='sort-by-select'
-                    name='sort-by-select'
                     aria-label='Sort by field'
-                    aria-labelledby='sort-by-select-label'
-                    title='Sort by field'
                     value={sortBy}
                     onChange={(e) => handleSortChange(e.target.value)}
                   >
@@ -507,7 +484,7 @@ export const ApiCallLogPage: React.FC = () => {
                   </SortBySelect>
                   <SortDirectionButton
                     onClick={toggleSortDirection}
-                    title={`Sort ${
+                    aria-label={`Sort ${
                       sortDirection === 'asc' ? 'ascending' : 'descending'
                     }`}
                   >

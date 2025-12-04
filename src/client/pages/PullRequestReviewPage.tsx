@@ -11,7 +11,6 @@ import {
   CheckCircle2,
   AlertCircle,
   Code,
-  FileCode,
   Zap,
   Shield,
   Eye,
@@ -184,7 +183,7 @@ const LoadingText = styled.div`
   font-weight: ${({ theme }) => theme.fontWeight.medium};
 `
 
-interface PullRequestReviewPageParams {
+interface PullRequestReviewPageParams extends Record<string, string | undefined> {
   owner: string
   repo: string
   number: string

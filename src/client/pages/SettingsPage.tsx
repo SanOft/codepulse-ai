@@ -3,10 +3,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
-import { Card, Input, Button, Badge } from '../components/ui'
+import { Card, Button } from '../components/ui'
 import {
   Settings,
-  DollarSign,
   Calendar,
   CalendarDays,
   BarChart3,

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
-import { GitPullRequest, Eye } from 'lucide-react';
+import { GitPullRequest } from 'lucide-react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { webSocketClient } from '../../services/websocket-client.service';

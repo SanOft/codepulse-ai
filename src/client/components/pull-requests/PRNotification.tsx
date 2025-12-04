@@ -2,8 +2,8 @@
 
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Badge } from '../ui'
-import { GitPullRequest, X, Eye, CheckCircle2 } from 'lucide-react'
+import { Button } from '../ui'
+import { GitPullRequest, X, Eye } from 'lucide-react'
 import { theme } from '../../styles/theme'
 
 const NotificationContainer = styled.div<{ $visible: boolean }>`

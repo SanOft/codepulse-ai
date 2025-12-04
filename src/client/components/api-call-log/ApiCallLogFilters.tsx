@@ -3,7 +3,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Calendar } from 'lucide-react'
-import { theme } from '../../styles/theme'
 
 const FiltersContainer = styled.div`
   display: flex;
